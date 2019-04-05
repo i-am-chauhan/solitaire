@@ -12,3 +12,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.red-card{
+  font-size: 180px;
+  color:rgb(159, 30, 30);
+}
+
+.black-card{
+  font-size: 180px;
+  color: #000000;
+}
+
+.foundation{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foundationPile{
+  height: 200px;
+  width: 150px;
+  border: 1px black solid;
+}
+
+#root{
+  margin: 10px 20px 30px 40px;
+  position: relative;
+  width: 80%;
+}
+
+.waste-pile{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 200px;
+  width: 400px;
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-part{
+  height: 200px;
+}
+
+.tableauPile{
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-part{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.game{
+  display: flex;
+  flex-direction: column;
+}
+/* 1f0a0 */

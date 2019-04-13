@@ -6,20 +6,18 @@ class WastePile extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = { cards: props.cards, key:props.key };
-    this.render = this.render.bind(this);
   }
 
   getPile() {
-    return this.state.cards.map(card => {
+    return this.props.cards.map(card => {
       let key = `${card.type}_${card.number}`;
-      return (<Card key={key} data={card} />);
+      return (<Card key={key} id="wastePile_0" data={card} />);
     })
   }
 
   render() {
     return (
-      <div className="waste-pile"></div>
+      <div className="waste-pile" id="wastePile_0"></div>
     );
   };
 }

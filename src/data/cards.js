@@ -3,313 +3,313 @@ const cards = [
     "type": "spade",
     "number": "1",
     "color": "black",
-    "unicode": "\u{1F0A1}"
+    "background": "AS.png"
   },
   {
     "type": "spade",
     "number": "2",
     "color": "black",
-    "unicode": "\u{1F0A2}"
+    "background": "2S.png"
   },
   {
     "type": "spade",
     "number": "3",
     "color": "black",
-    "unicode": "\u{1F0A3}"
+    "background": "3S.png"
   },
   {
     "type": "spade",
     "number": "4",
     "color": "black",
-    "unicode": "\u{1F0A4}"
+    "background": "4S.png"
   },
   {
     "type": "spade",
     "number": "5",
     "color": "black",
-    "unicode": "\u{1F0A5}"
+    "background": "5S.png"
   },
   {
     "type": "spade",
     "number": "6",
     "color": "black",
-    "unicode": "\u{1F0A6}"
+    "background": "6S.png"
   },
   {
     "type": "spade",
     "number": "7",
     "color": "black",
-    "unicode": "\u{1F0A7}"
+    "background": "7S.png"
   },
   {
     "type": "spade",
     "number": "8",
     "color": "black",
-    "unicode": "\u{1F0A8}"
+    "background": "8S.png"
   },
   {
     "type": "spade",
     "number": "9",
     "color": "black",
-    "unicode": "\u{1F0A9}"
+    "background": "9S.png"
   },
   {
     "type": "spade",
     "number": "10",
     "color": "black",
-    "unicode": "\u{1F0AA}"
+    "background": "10S.png"
   },
   {
     "type": "spade",
     "number": "11",
     "color": "black",
-    "unicode": "\u{1F0AB}"
+    "background": "JS.png"
   },
   {
     "type": "spade",
     "number": "12",
     "color": "black",
-    "unicode": "\u{1F0AD}"
+    "background": "QS.png"
   },
   {
     "type": "spade",
     "number": "13",
     "color": "black",
-    "unicode": "\u{1F0AE}"
+    "background": "KS.png"
   },
   {
     "type": "club",
     "number": "1",
     "color": "black",
-    "unicode": "\u{1F0D1}"
+    "background": "AC.png"
   },
   {
     "type": "club",
     "number": "2",
     "color": "black",
-    "unicode": "\u{1F0D2}"
+    "background": "2C.png"
   },
   {
     "type": "club",
     "number": "3",
     "color": "black",
-    "unicode": "\u{1F0D3}",
+    "background": "3C.png",
   },
   {
     "type": "club",
     "number": "4",
     "color": "black",
-    "unicode": "\u{1F0D4}"
+    "background": "4C.png"
   },
   {
     "type": "club",
     "number": "5",
     "color": "black",
-    "unicode": "\u{1F0D5}"
+    "background": "5C.png"
   },
   {
     "type": "club",
     "number": "6",
     "color": "black",
-    "unicode": "\u{1F0D6}"
+    "background": "6C.png"
   },
   {
     "type": "club",
     "number": "7",
     "color": "black",
-    "unicode": "\u{1F0D7}"
+    "background": "7C.png"
   },
   {
     "type": "club",
     "number": "8",
     "color": "black",
-    "unicode": "\u{1F0D8}"
+    "background": "8C.png"
   },
   {
     "type": "club",
     "number": "9",
     "color": "black",
-    "unicode": "\u{1F0D9}"
+    "background": "9C.png"
   },
   {
     "type": "club",
     "number": "10",
     "color": "black",
-    "unicode": "\u{1F0DA}"
+    "background": "10C.png"
   },
   {
     "type": "club",
     "number": "11",
     "color": "black",
-    "unicode": "\u{1F0DB}"
+    "background": "JC.png"
   },
   {
     "type": "club",
     "number": "12",
     "color": "black",
-    "unicode": "\u{1F0DD}"
+    "background": "QC.png"
   },
   {
     "type": "club",
     "number": "13",
     "color": "black",
-    "unicode": "\u{1F0DE}"
+    "background": "KC.png"
   },
   {
     "type": "diamond",
     "number": "1",
     "color": "red",
-    "unicode": "\u{1F0C1}"
+    "background": "AD.png"
   },
   {
     "type": "diamond",
     "number": "2",
     "color": "red",
-    "unicode": "\u{1F0C2}"
+    "background": "2D.png"
   },
   {
     "type": "diamond",
     "number": "3",
     "color": "red",
-    "unicode": "\u{1F0C3}"
+    "background": "3D.png"
   },
   {
     "type": "diamond",
     "number": "4",
     "color": "red",
-    "unicode": "\u{1F0C4}"
+    "background": "4D.png"
   },
   {
     "type": "diamond",
     "number": "5",
     "color": "red",
-    "unicode": "\u{1F0C5}"
+    "background": "5D.png"
   },
   {
     "type": "diamond",
     "number": "6",
     "color": "red",
-    "unicode": "\u{1F0C6}"
+    "background": "6D.png"
   },
   {
     "type": "diamond",
     "number": "7",
     "color": "red",
-    "unicode": "\u{1F0C7}"
+    "background": "7D.png"
   },
   {
     "type": "diamond",
     "number": "8",
     "color": "red",
-    "unicode": "\u{1F0C8}"
+    "background": "8D.png"
   },
   {
     "type": "diamond",
     "number": "9",
     "color": "red",
-    "unicode": "\u{1F0C9}"
+    "background": "9D.png"
   },
   {
     "type": "diamond",
     "number": "10",
     "color": "red",
-    "unicode": "\u{1F0CA}"
+    "background": "10D.png"
   },
   {
     "type": "diamond",
     "number": "11",
     "color": "red",
-    "unicode": "\u{1F0CB}"
+    "background": "JD.png"
   },
   {
     "type": "diamond",
     "number": "12",
     "color": "red",
-    "unicode": "\u{1F0CD}"
+    "background": "QD.png"
   },
   {
     "type": "diamond",
     "number": "13",
     "color": "red",
-    "unicode": "\u{1F0CE}"
+    "background": "KD.png"
   },
   {
     "type": "heart",
     "number": "1",
     "color": "red",
-    "unicode": "\u{1F0B1}"
+    "background": "AH.png"
   },
   {
     "type": "heart",
     "number": "2",
     "color": "red",
-    "unicode": "\u{1F0B2}"
+    "background": "2H.png"
   },
   {
     "type": "heart",
     "number": "3",
     "color": "red",
-    "unicode": "\u{1F0B3}"
+    "background": "3H.png"
   },
   {
     "type": "heart",
     "number": "4",
     "color": "red",
-    "unicode": "\u{1F0B4}"
+    "background": "4H.png"
   },
   {
     "type": "heart",
     "number": "5",
     "color": "red",
-    "unicode": "\u{1F0B5}"
+    "background": "5H.png"
   },
   {
     "type": "heart",
     "number": "6",
     "color": "red",
-    "unicode": "\u{1F0B6}"
+    "background": "6H.png"
   },
   {
     "type": "heart",
     "number": "7",
     "color": "red",
-    "unicode": "\u{1F0B7}"
+    "background": "7H.png"
   },
   {
     "type": "heart",
     "number": "8",
     "color": "red",
-    "unicode": "\u{1F0B8}"
+    "background": "8H.png"
   },
   {
     "type": "heart",
     "number": "9",
     "color": "red",
-    "unicode": "\u{1F0B9}"
+    "background": "9H.png"
   },
   {
     "type": "heart",
     "number": "10",
     "color": "red",
-    "unicode": "\u{1F0BA}"
+    "background": "10H.png"
   },
   {
     "type": "heart",
     "number": "11",
     "color": "red",
-    "unicode":  "\u{1F0BB}"
+    "background": "JH.png"
   },
   {
     "type": "heart",
     "number": "12",
     "color": "red",
-    "unicode": "\u{1F0BD}"
+    "background": "QH.png"
   },
   {
     "type": "heart",
     "number": "13",
     "color": "red",
-    "unicode": "\u{1F0BE}"
+    "background": "KH.png"
   }
 ]
 

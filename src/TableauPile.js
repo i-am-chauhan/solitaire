@@ -5,16 +5,24 @@ import Card from "./Card";
 class TableauPile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { cards: props.cards, id: props.id };
-    this.render = this.render.bind(this);
-    this.getPile = this.getPile.bind(this);
+  }
+
+  _showLastCard(cards) {
+    if (cards.length < 1) return cards;
+    const visibleCard = cards[cards.length - 1];
+    visibleCard.visible = true;
+    return cards;
   }
 
   getPile() {
-    return this.state.cards.map(card => {
+    let count = 1;
+    let top = 0;
+    const cards = this._showLastCard(this.props.cards);
+    return cards.map(function(card){
       let key = `${card.type}_${card.number}`;
-      return (<Card key={key} id={key} data={card} />);
-    })
+      top +=40;
+      return (<Card key={key} id={this.props.id} top={top} zindex={count++} data={card} />);
+    },this)
   }
 
   render() {

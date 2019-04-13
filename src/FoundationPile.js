@@ -5,21 +5,18 @@ import Card from "./Card";
 class FoundationPile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { cards: [], key: props.key };
-    this.render = this.render.bind(this);
-    this.getPile = this.getPile.bind(this);
   }
 
   getPile() {
-    return this.state.cards.map(card => {
+    return this.props.cards.map(card => {
       let key = `${card.type}_${card.number}`;
-      return (<Card key={key} data={card}/>)
+      return (<Card key={key} id={this.props.id} data={card}/>)
     })
   }
 
   render() {
     return (
-      <div className="foundationPile" >{this.getPile()}</div>
+      <div className="foundationPile" id={this.props.id}>{this.getPile()}</div>
     );
   };
 }

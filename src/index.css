@@ -13,14 +13,15 @@ code {
     monospace;
 }
 
-.red-card{
-  font-size: 180px;
-  color:rgb(159, 30, 30);
+.card_container{
+  position: absolute;
+
 }
 
-.black-card{
-  font-size: 180px;
-  color: #000000;
+.card{
+  height: 160px;
+  width: 105px;
+  background-size: cover;
 }
 
 .foundation{
@@ -33,6 +34,9 @@ code {
 }
 
 .foundationPile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 200px;
   width: 150px;
   border: 1px black solid;
@@ -61,8 +65,11 @@ code {
 }
 
 .tableauPile{
+  margin-top: 10px;
   display: flex;
+  width: 150px;
   flex-direction: column;
+  position: relative;
 }
 
 .bottom-part{
@@ -76,4 +83,3 @@ code {
   display: flex;
   flex-direction: column;
 }
-/* 1f0a0 */

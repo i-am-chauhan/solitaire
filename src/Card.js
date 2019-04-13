@@ -2,61 +2,49 @@ import React from 'react';
 import './index.css';
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { data: props.data, key: props.id };
-    this.getClassName = this.getClassName.bind(this);
-    this.getUnicode = this.getUnicode.bind(this);
-  }
-
-  getClassName() {
-    const card = this.state.data;
-    if (card.color == 'red' && card.vissible) {
-      return "red-card";
-    }
-    return 'black-card';
-  }
-
-  allowDrop(ev) {
-    ev.preventDefault();
-  }
-
-  drop(event) {
-    event.preventDefault();
-    const id = event.dataTransfer.getData('id');
-    event.target.appendChild(document.getElementById(id));
-  }
 
   drag(event) {
     event.dataTransfer.setData('id', event.target.id);
   }
 
-  isDraggable(){
-    return this.state.data.vissible;
+  isDraggable() {
+    return this.props.data.visible;
   }
 
-  getId(){
-    const card = this.state.data;
-    return `${card.type}_${card.number}`;
+  getId() {
+    const card = this.props.data;
+    return `${this.props.id}_${card.type}_${card.number}`;
   }
 
-  getUnicode(){
-    const card = this.state.data;
-    if(card.vissible) return card.unicode;
-    return "\u{1f0a0}";
+  getCardId() {
+    const card = this.props.data;
+    return `${this.props.id}_card_${card.type}_${card.number}`;
+  }
+
+  getHeight(){
+    return (160 + this.props.top) + "px";
+  }
+
+  getPositionTop(){
+    return this.props.top + "px";
+  }
+
+  getImg(){
+    const card = this.props.data;
+    if(!card.visible) return "";
+    return `url(./cards_img/${card.background})`;
   }
 
   render() {
     return (
       <div
+        className="card_container"
+        style={{top:this.getPositionTop(), height:this.getHeight()}}
         id={this.getId()}
-        className={this.getClassName()}
         draggable={this.isDraggable.call(this)}
         onDragStart={this.drag.bind(this)}
-        onDrop={this.drop.bind(this)}
-        onDragOver={this.allowDrop}
       >
-        {this.getUnicode()}
+        <div id={this.getCardId()} className="card" style={{ backgroundImage: this.getImg() }}></div>
       </div>
     );
   }

@@ -2,39 +2,74 @@ import React from 'react';
 import './index.css';
 import WastePile from "./WastePile";
 import Foundation from "./Foundation";
-import lodash from 'lodash';
 import Tableau from "./Tableau";
+import Deck from "./Deck";
 
 class Game extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { cards: props.cards };
+    this.deck = new Deck(props.cards)
+    this.state = {
+      wastePile: this.deck.getWastePile(),
+      foundation: this.deck.getFoundationPile(),
+      tableau: this.deck.getTableauPile()
+    };
   }
 
+  allowDrop(ev) {
+    ev.preventDefault();
+  }
 
-  hideCards(cards){
-    return cards.map(card => {
-      card.vissible = false;
-      return card;
+  _getCardById(id) {
+    const [type, number] = id.split('_').slice(-2);
+    return this.props.cards.filter(card => {
+      return card.type == type && card.number == number;
+    })[0];
+  }
+
+  _findCardAndRemove(card) {
+    const piles = Object.assign({}, this.state);
+    Object.keys(piles).forEach(pile => {
+      piles[pile] = piles[pile].map(cards => {
+        let isPresent = cards.includes(card);
+        if (isPresent) cards = cards.filter(anyCard => anyCard != card);
+        return cards;
+      });
     });
+    return piles;
+  }
+
+  updatePiles(card, targetId) {
+    const [typeOfPile, index] = targetId.split('_').slice(0, 2);
+    if(!typeOfPile) return;
+    const piles = this._findCardAndRemove(card);
+    piles[typeOfPile][index].push(card);
+    this.setState(state => piles);
+  }
+
+  drop(event) {
+    event.preventDefault();
+    const targetId = event.target.id;
+    const id = event.dataTransfer.getData('id');
+    const card = this._getCardById(id);
+    this.updatePiles(card, targetId);
   }
 
   getAllComponents() {
-    const cards = lodash.shuffle(this.state.cards);
     return (
-      <div className="game">
+      <div
+        className="game"
+        onDrop={this.drop.bind(this)}
+        onDragOver={this.allowDrop}
+      >
         <div className="top-part">
-        <WastePile cards={this.hideCards(cards.slice(0, 24))} />
-        <Foundation />
+          <WastePile cards={this.state.wastePile} />
+          <Foundation cards={this.state.foundation} />
         </div>
-        <Tableau cards={this.hideCards(cards.slice(24))} />
+        <Tableau cards={this.state.tableau} />
       </div>
     );
-    // components.push(<WastePile cards={cards.slice(0, 24)} />);
-    // components.push(<Foundation />);
-    // components.push(<Tableau cards={cards.slice(24)} />);
-    // return components;
   }
 
   render() {

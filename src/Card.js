@@ -22,7 +22,7 @@ class Card extends React.Component {
   }
 
   getHeight(){
-    return (160 + this.props.top) + "px";
+    return this.props.height + "px";
   }
 
   getPositionTop(){
@@ -31,7 +31,7 @@ class Card extends React.Component {
 
   getImg(){
     const card = this.props.data;
-    if(!card.visible) return "";
+    if(!card.visible) return "url(./cards_img/back_card.png)";
     return `url(./cards_img/${card.background})`;
   }
 

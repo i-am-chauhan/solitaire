@@ -14,6 +14,11 @@ class TableauPile extends React.Component {
     return cards;
   }
 
+  _getHeight(count){
+    const length = this.props.cards.length;
+    return 40*(length-count) + 160;
+  }
+
   getPile() {
     let count = 1;
     let top = 0;
@@ -21,7 +26,7 @@ class TableauPile extends React.Component {
     return cards.map(function(card){
       let key = `${card.type}_${card.number}`;
       top +=40;
-      return (<Card key={key} id={this.props.id} top={top} zindex={count++} data={card} />);
+      return (<Card key={key} id={this.props.id} height={this._getHeight(count)} top={top} zindex={count++} data={card} />);
     },this)
   }
 

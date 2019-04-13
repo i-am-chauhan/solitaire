@@ -48,16 +48,23 @@ code {
   width: 80%;
 }
 
-.waste-pile{
+.waste-pile-container{
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 200px;
-  width: 400px;
   border: 1px black solid;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.waste-pile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 150px;
+  border: 1px black solid;
 }
 
 .top-part{

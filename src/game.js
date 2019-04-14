@@ -137,12 +137,25 @@ class Game extends React.Component {
 		return;
 	}
 
+	isWon() {
+		const totalCards = this.state.foundation.reduce((inital, cards) => {
+			return inital + cards.length;
+    }, 0);
+    return totalCards == 52;
+	}
+
+  showWinning(){
+    document.getElementById('overlay').style.display = "flex";
+    document.getElementById('pop-up-container').style.display = "flex";
+  }
+
 	drop(event) {
 		event.preventDefault();
 		console.log("hello", targetId);
 		const targetId = event.target.id;
 		const id = event.dataTransfer.getData("id");
 		this.updatePiles(targetId, id);
+		if(this.isWon()) this.showWinning();
 	}
 
 	getAllComponents() {

@@ -28,8 +28,10 @@ code {
   position: absolute;
   right: 0px;
   top: 0px;
+  height: 200px;
+  width: 500px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -37,9 +39,10 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 150px;
-  border: 1px black solid;
+  height: 160px;
+  width: 105px;
+  border-radius: 5px;
+  background: whitesmoke;
 }
 
 #root{
@@ -52,19 +55,21 @@ code {
   position: absolute;
   left: 0px;
   top: 0px;
-  border: 1px black solid;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  height: 200px;
+  width:250px;
 }
 
 .waste-pile{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 150px;
-  border: 1px black solid;
+  height: 160px;
+  width: 105px;
+  border-radius: 5px;
+  background: wheat;
 }
 
 .top-part{
@@ -74,9 +79,12 @@ code {
 .tableauPile{
   margin-top: 10px;
   display: flex;
-  width: 150px;
+  width: 105px;
+  height: 160px;
   flex-direction: column;
   position: relative;
+  border-radius: 5px;
+  background: whitesmoke;
 }
 
 .bottom-part{

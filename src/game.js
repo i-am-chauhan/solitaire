@@ -23,9 +23,9 @@ class Game extends React.Component {
 	_showCard(card) {
 		card.visible = true;
 		return card;
-  }
-  
-  _hideCard(card) {
+	}
+
+	_hideCard(card) {
 		card.visible = false;
 		return card;
 	}
@@ -38,8 +38,8 @@ class Game extends React.Component {
 		if (wastePile1.length == 0) {
 			piles[0] = wastePile1.concat(piles[1].map(this._hideCard));
 			piles[1] = [];
-      this.setState(() => newState);
-      return;
+			this.setState(() => newState);
+			return;
 		}
 		const card = this._showCard(wastePile1.pop());
 		piles[1].push(card);
@@ -75,21 +75,74 @@ class Game extends React.Component {
 		return pile.slice(cardIndex);
 	}
 
-	updatePiles(card, targetId, id) {
+	updateFoundation(targetId, id) {
 		const { typeOfPile, pileIndex } = this.parseId(targetId);
-		if (!typeOfPile) return;
+		const targetPile = this.state[typeOfPile][pileIndex];
+		const dropedCard = this._getCardById(id);
+		const targetCard = targetPile[targetPile.length - 1];
+		if (!targetCard && dropedCard.number != "1") return;
+		if (targetCard && !this.isAbleToGoInFoundation(targetCard, dropedCard))
+			return;
+		const cards = this._getAllCardsBelow(id);
+		if (cards.length != 1) return;
+		const piles = this._findCardAndRemove(id);
+		piles[typeOfPile][pileIndex].push(cards[0]);
+		this.setState((state) => piles);
+	}
+
+	hasNextRank(firstCard, secondCard) {
+		return +firstCard.number == +secondCard.number + 1;
+	}
+
+	isOfSameColor(firstCard, secondCard) {
+		return firstCard.color == secondCard.color;
+	}
+
+	isNotAbleToDrop(firstCard, secondCard) {
+		return (
+			!this.hasNextRank(firstCard, secondCard) ||
+			this.isOfSameColor(firstCard, secondCard)
+		);
+	}
+
+	isOfSameSuite(firstCard, secondCard) {
+		return firstCard.type == secondCard.type;
+	}
+
+	isAbleToGoInFoundation(firstCard, secondCard) {
+		return (
+			this.isOfSameSuite(firstCard, secondCard) &&
+			this.hasNextRank(secondCard, firstCard)
+		);
+	}
+
+	updateTableau(targetId, id) {
+		const { typeOfPile, pileIndex } = this.parseId(targetId);
+		const targetPile = this.state[typeOfPile][pileIndex];
+		const dropedCard = this._getCardById(id);
+    const targetCard = targetPile[targetPile.length - 1];
+    console.log('targetCard', targetCard, dropedCard);
+		if (!targetCard && dropedCard.number != "13") return;
+		if (targetCard && this.isNotAbleToDrop(targetCard, dropedCard)) return;
 		const cards = this._getAllCardsBelow(id);
 		const piles = this._findCardAndRemove(id);
 		piles[typeOfPile][pileIndex] = piles[typeOfPile][pileIndex].concat(cards);
 		this.setState((state) => piles);
 	}
 
+	updatePiles(targetId, id) {
+		const { typeOfPile } = this.parseId(targetId);
+		if (typeOfPile == "foundation") this.updateFoundation(targetId, id);
+		if (typeOfPile == "tableau") this.updateTableau(targetId, id);
+		return;
+	}
+
 	drop(event) {
-		event.preventDefault();
+    event.preventDefault();
+    console.log('hello', targetId);
 		const targetId = event.target.id;
 		const id = event.dataTransfer.getData("id");
-		const card = this._getCardById(id);
-		this.updatePiles(card, targetId, id);
+		this.updatePiles(targetId, id);
 	}
 
 	getAllComponents() {

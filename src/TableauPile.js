@@ -21,7 +21,7 @@ class TableauPile extends React.Component {
 
   getPile() {
     let count = 1;
-    let top = 0;
+    let top = -40;
     const cards = this._showLastCard(this.props.cards);
     return cards.map(function(card){
       let key = `${card.type}_${card.number}`;
@@ -32,7 +32,7 @@ class TableauPile extends React.Component {
 
   render() {
     return (
-      <div className="tableauPile">{this.getPile()}</div>
+      <div className="tableauPile" id={this.props.id}>{this.getPile()}</div>
     );
   };
 }

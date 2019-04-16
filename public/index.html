@@ -13,10 +13,6 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script>
-      const reload = function(){
-        window.location.href = "/"
-      }
     </script>
 		<!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -33,10 +29,10 @@
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
 		<div class="overlay" id="overlay"></div>
-		<div class="pop-up-container" id="pop-up-container">
+		<div class="pop-up-container" style="display:none" id="pop-up-container">
 			<div class="pop-up">
         <h1 style="width:fit-content">You won the game!</h1>
-        <button class="button" onclick="reload()">New Game</button>
+        <button class="button" onclick="location.reload();">New Game</button>
 			</div>
 		</div>
 		<!--

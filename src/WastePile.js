@@ -3,9 +3,6 @@ import "./index.css";
 import Card from "./Card";
 
 class WastePile extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
 	getPile(cards, count) {
 		const cardsHtml = cards.map((card) => {

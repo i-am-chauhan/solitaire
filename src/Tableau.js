@@ -4,10 +4,6 @@ import TableauPile from "./TableauPile";
 
 class Tableau extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
 splitCards() {
     return this.props.cards.map((cards, number) => {
       return (

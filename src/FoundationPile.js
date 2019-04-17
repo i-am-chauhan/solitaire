@@ -3,9 +3,6 @@ import "./index.css";
 import Card from "./Card";
 
 class FoundationPile extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
 	getPile() {
 		return this.props.cards.map((card) => {

@@ -121,7 +121,6 @@ class Game extends React.Component {
 		const targetPile = this.state[typeOfPile][pileIndex];
 		const dropedCard = this._getCardById(id);
 		const targetCard = targetPile[targetPile.length - 1];
-		console.log("targetCard", targetCard, dropedCard);
 		if (!targetCard && dropedCard.number != "13") return;
 		if (targetCard && this.isNotAbleToDrop(targetCard, dropedCard)) return;
 		const cards = this._getAllCardsBelow(id);
@@ -151,7 +150,6 @@ class Game extends React.Component {
 
 	drop(event) {
 		event.preventDefault();
-		console.log("hello", targetId);
 		const targetId = event.target.id;
 		const id = event.dataTransfer.getData("id");
 		this.updatePiles(targetId, id);

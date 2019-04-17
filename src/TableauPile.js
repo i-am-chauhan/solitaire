@@ -3,9 +3,6 @@ import "./index.css";
 import Card from "./Card";
 
 class TableauPile extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
 	_showLastCard(cards) {
 		if (cards.length < 1) return cards;
